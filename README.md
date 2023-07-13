@@ -1,9 +1,13 @@
 # my-
+
 from datetime import datetime
+
 
 #Aqui o from datetime e o  import datetime permitem acessar diretamente a classe datetime para manipulação de datas e horas
 
+
 agenda = []
+
 
 def adicionar_compromisso():
     data = input("Digite a data do compromisso (DD/MM/AAAA): ")
@@ -14,7 +18,8 @@ def adicionar_compromisso():
         "hora": hora,
         "descricao": descricao
     }
-    agenda.append(compromisso)
+
+ agenda.append(compromisso)
     print("Compromisso adicionado com sucesso!")
 #Aqui captura informações sobre um compromisso fornecidas pelo usuário e adiciona o compromisso à lista agenda#
 
@@ -39,9 +44,11 @@ try:
             if inicio <= data_compromisso <= fim:
                 print(f"{i}. Data: {compromisso['data']}, Hora: {compromisso['hora']}, Descrição: {compromisso['descricao']}")
         print("--------------------------------")
-    except ValueError:
+        
+ except ValueError:
         print("Formato de data inválido. Certifique-se de digitar no formato DD/MM/AAAA.")
 #Aqui exibe os compromissos da agenda dentro de um período definido pelo usuário, mostrando a data, hora e descrição de cada compromisso e lida com erros de formato de data#
+
 
 def editar_compromisso():
     visualizar_compromissos()
@@ -53,6 +60,7 @@ def editar_compromisso():
         print("2. Hora")
         print("3. Descrição")
         opcao = input("Digite o número da opção desejada: ")
+
 
  if opcao == "1":
             nova_data = input("Digite a nova data do compromisso (DD/MM/AAAA): ")
@@ -72,6 +80,7 @@ def editar_compromisso():
         print("Número de compromisso inválido!")
 #Aqui permite editar um compromisso selecionado da agenda com base nas opções escolhidas pelo usuário#
 
+
 def remover_compromisso():
     visualizar_compromissos()
     indice = int(input("Digite o número do compromisso que deseja remover: ")) - 1
@@ -82,7 +91,9 @@ def remover_compromisso():
         print("Número de compromisso inválido!")
  #Aqui permite remover um compromisso selecionado da agenda com base no número informado pelo usuário#
 
+
 def menu():
+
     
 while True:
         print("\n>>>>> MENU <<<<<<")
@@ -107,6 +118,9 @@ while True:
             break
         else:
             print("Opção inválida! Digite novamente.")
+
+            
 #Aqui exibe um menu interativo onde o usuário pode escolher entre várias opções, como adicionar, visualizar, editar e remover compromissos, bem como sair do programa#
+
 
 menu()
