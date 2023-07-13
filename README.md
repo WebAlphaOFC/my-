@@ -1,6 +1,8 @@
 # my-
 from datetime import datetime
-#Aqui o from datetime e o  import datetime permitem acessar diretamente a classe datetime para manipulação de datas e horas#
+
+#Aqui o from datetime e o  import datetime permitem acessar diretamente a classe datetime para manipulação de datas e horas
+
 agenda = []
 
 def adicionar_compromisso():
@@ -27,10 +29,10 @@ def visualizar_compromissos_por_periodo():
     inicio = input("Digite a data de início do período (DD/MM/AAAA): ")
     fim = input("Digite a data de fim do período (DD/MM/AAAA): ")
 
-    try:
-        inicio = datetime.strptime(inicio, "%d/%m/%Y")
+    
+try:
+    inicio = datetime.strptime(inicio, "%d/%m/%Y")
         fim = datetime.strptime(fim, "%d/%m/%Y")
-
         print(f"\n---- Compromissos entre {inicio.strftime('%d/%m/%Y')} e {fim.strftime('%d/%m/%Y')} ----")
         for i, compromisso in enumerate(agenda, start=1):
             data_compromisso = datetime.strptime(compromisso['data'], "%d/%m/%Y")
@@ -52,7 +54,7 @@ def editar_compromisso():
         print("3. Descrição")
         opcao = input("Digite o número da opção desejada: ")
 
-        if opcao == "1":
+ if opcao == "1":
             nova_data = input("Digite a nova data do compromisso (DD/MM/AAAA): ")
             compromisso["data"] = nova_data
             print("Data do compromisso editada com sucesso!")
@@ -82,7 +84,7 @@ def remover_compromisso():
 
 def menu():
     
-    while True:
+while True:
         print("\n>>>>> MENU <<<<<<")
         print("1. Adicionar compromisso")
         print("2. Visualizar compromissos")
